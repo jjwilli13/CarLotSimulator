@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace CarLotSimulator
 {
@@ -8,10 +9,10 @@ namespace CarLotSimulator
         {
             //TODO
 
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-            //The methods should take one string parameter: the respective noise property
+            //Create a seperate class file called Car --DONE
+            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable --DONE
+            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise() --DONE
+            //The methods should take one string parameter: the respective noise property -- DONE
 
 
             //Now that the Car class is created we can instanciate 3 new cars
@@ -28,6 +29,62 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            var lot = new Carlot();
+            
+
+            //Instanciation 1
+            var firstCar = new Car();
+            firstCar.Year = 2012;
+            firstCar.Make = "Toyota";
+            firstCar.Model = "Sequoia";
+            firstCar.EngineNoise = "vrmm vrmmm";
+            firstCar.HonkNoise = "BEEP";
+            firstCar.IsDriveable = true;
+
+            lot.Cars.Add(firstCar);
+    
+            //Instanciation 2
+            var secondCar = new Car()
+            {
+                Year = 2005,
+                Make = "Chevrolet",
+                Model = "Cavalier",
+                EngineNoise = "vrrrm",
+                HonkNoise = "TOOT",
+                IsDriveable = true,
+
+            };
+
+            lot.Cars.Add(secondCar);
+            
+
+            //Instanciation 3
+            var thirdCar = new Car(1999, "Ford", "Ranger", "putputput", "beeep", false);
+
+            lot.Cars.Add(thirdCar);
+
+            //Call EngineNoise Method
+            firstCar.MakeEngineNoise(firstCar.EngineNoise);
+            secondCar.MakeEngineNoise(secondCar.EngineNoise);
+            thirdCar.MakeEngineNoise(secondCar.EngineNoise);
+
+            //Call HonkNoise Method
+            firstCar.MakeHonkNoise(firstCar.HonkNoise);
+            secondCar.MakeHonkNoise(secondCar.HonkNoise);
+            thirdCar.MakeHonkNoise(thirdCar.HonkNoise);
+
+
+            foreach (var car in lot.Cars)
+            {
+                Console.WriteLine($"Year: {car.Year} Make: {car.Make} Model: {car.Model}");
+            }
+
+
         }
+
+           
+
+
     }
 }
