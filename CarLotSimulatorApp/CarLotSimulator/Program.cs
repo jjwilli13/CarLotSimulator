@@ -30,7 +30,7 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
 
-            var lot = new Carlot();
+            var lot = new CarLot();
             
 
             //Instanciation 1
@@ -65,15 +65,16 @@ namespace CarLotSimulator
             lot.Cars.Add(thirdCar);
 
             //Call EngineNoise Method
-            firstCar.MakeEngineNoise(firstCar.EngineNoise);
-            secondCar.MakeEngineNoise(secondCar.EngineNoise);
-            thirdCar.MakeEngineNoise(secondCar.EngineNoise);
+            //firstCar.MakeEngineNoise(firstCar.EngineNoise);
+            //secondCar.MakeEngineNoise(secondCar.EngineNoise);
+            //thirdCar.MakeEngineNoise(secondCar.EngineNoise);
 
             //Call HonkNoise Method
-            firstCar.MakeHonkNoise(firstCar.HonkNoise);
-            secondCar.MakeHonkNoise(secondCar.HonkNoise);
-            thirdCar.MakeHonkNoise(thirdCar.HonkNoise);
+            //firstCar.MakeHonkNoise(firstCar.HonkNoise);
+            //secondCar.MakeHonkNoise(secondCar.HonkNoise);
+            //thirdCar.MakeHonkNoise(thirdCar.HonkNoise);
 
+            Console.WriteLine($"Number of cars in inventory is: {CarLot.numberOfCars}");
 
             foreach (var car in lot.Cars)
             {

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 
 namespace CarLotSimulator
 {
-    public class Carlot
+    public class CarLot
     {
-        public Carlot()
+        public CarLot()
         {
+
         }
+
+
+        public static int numberOfCars = 1;
 
         public List<Car> Cars = new List<Car>();
 
